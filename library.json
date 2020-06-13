@@ -5,7 +5,6 @@
 	"description": "Library to use Vishay VNCL4020C PPG sensor",
 	"frameworks": "Arduino",
 	"platforms": "*",
-	"license": "Beerware License",
 	"examples": "[Ee]xamples/*/*.ino",
 	"authors": {
 		"email": "beegee@giesecke.tk",
