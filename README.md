@@ -1,4 +1,4 @@
-# VCNL4020C-Arduino [![Build Status](https://travis-ci.com/beegee-tokyo/VCNL4020C-Arduino.svg?branch=master)](https://travis-ci.com/beegee-tokyo/VCNL4020C-Arduino)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](https://beegee-tokyo.github.io/VCNL4020C-Arduino/docs/)
+# VCNL4020C-Arduino [![Build Status](https://travis-ci.com/beegee-tokyo/VCNL4020C-Arduino.svg?branch=master)](https://travis-ci.com/beegee-tokyo/VCNL4020C-Arduino)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](https://beegee-tokyo.github.io/VCNL4020C-Arduino/)
 
 ----
 Arduino library for the Vishay VCNL4020C    
