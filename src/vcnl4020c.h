@@ -1,12 +1,18 @@
+/** 
+ * @file vcnl4020c.h
+ * @brief API for Vishay VCNL4020C PPG sensor
+ *
+ * @author   Bernd Giesecke
+ * 
+ * Arduino library for the Vishay VCNL4020C
+ * High Resolution Digital Biosensor for Wearable Applications With I²C Interface
+ * - Applications
+ *  - Wearables
+ *  - Health monitoring 
+ *  - Pulse oximetry
+ */
 #ifndef VCNL4020C_H
 #define VCNL4020C_H
-
-// Arduino library for the Vishay VCNL4020C
-// High Resolution Digital Biosensor for Wearable Applications With I²C Interface
-// APPLICATIONS
-// - Wearables
-// - Health monitoring
-// - Pulse oximetry
 
 /** Default I2C address of VCNL4020C */
 #define VCNL4020C_ADDR 0x13 // Datasheet said 0x26
@@ -294,18 +300,17 @@
  * | Bit 7 -- Bit 5        | Bit 4  -- Bit 3     | Bit 2 -- Bit 0
  * | Modulation delay time | Biosensor frequency | Modulation dead time
  * - Modulation delay time R/W bits. 
- *	-	Setting a delay time between LED signal and detectors input signal evaluation.
- *	-	This function is for compensation of delays from LED and photo diode.
- *	-	Also in respect to the possibility for setting different proximity signal frequency.
- *	-	Correct adjustment is optimizing measurement signal level. (DEFAULT = 0)
+ * 	Setting a delay time between LED signal and detectors input signal evaluation.
+ *	This function is for reducing of possible disturbance effects.
+ *	This function is reducing signal level and should be used carefully.
  * - Biosensor frequency R/W bits. 
- *	-	Setting the biosensor test signal frequency
- *	-	The biosensor measurement is using a square signal as measurement signal.
  *	-	Four different values are possible:
- *	-	00 = 390.625 kHz (DEFAULT)
- *	-	01 = 781.25 kHz
- *	-	10 = 1.5625 MHz
- *	-	11 = 3.125 MHz
+ * |____|_________
+ * |----|---------
+ * | 00 | 390.625 kHz (DEFAULT)
+ * | 01 | 781.25 kHz
+ * | 10 | 1.5625 MHz
+ * | 11 | 3.125 MHz
  * - Modulation dead time R/W bits.
  *	- 	Setting a dead time in evaluation of LED signal at the slopes of the signal. (DEFAULT = 1)
  *	-	This function is for reducing of possible disturbance effects.

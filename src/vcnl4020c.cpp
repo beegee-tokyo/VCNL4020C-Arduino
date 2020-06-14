@@ -1,9 +1,16 @@
-// Arduino library for the Vishay VCNL4020C
-// High Resolution Digital Biosensor for Wearable Applications With I²C Interface
-// APPLICATIONS
-// - Wearables
-// - Health monitoring
-// - Pulse oximetry
+/** 
+ * @file vcnl4020c.cpp
+ * @brief API for Vishay VCNL4020C PPG sensor
+ *
+ * @author   Bernd Giesecke
+ * 
+ * Arduino library for the Vishay VCNL4020C
+ * High Resolution Digital Biosensor for Wearable Applications With I²C Interface
+ * - Applications
+ *  - Wearables
+ *  - Health monitoring 
+ *  - Pulse oximetry
+ */
 
 #include "vcnl4020c.h"
 
@@ -289,8 +296,6 @@ bool VCNL4020C::setAlsParam(uint8_t dataRate, uint8_t avgConv, bool offsetComp)
 	}
 	regValue |= dataRate;
 	regValue |= avgConv;
-
-	/// \todo how to handle Continuous Conversion Mode
 
 	return writeRegs(AMBIENT_LIGHT_PARAM, &regValue, 1);
 }

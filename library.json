@@ -1,6 +1,6 @@
 {
 	"name": "VCNL4020C-Arduino",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"keywords": "PPG sensor",
 	"description": "Library to use Vishay VCNL4020C PPG sensor",
 	"frameworks": "Arduino",

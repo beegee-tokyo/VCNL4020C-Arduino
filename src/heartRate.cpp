@@ -76,8 +76,12 @@
 // int16_t cbuf[32];
 // uint8_t offset = 0;
 
+/** Coefficients for FIR calculation */ 
 static const uint16_t FIRCoeffs[12] = {172, 321, 579, 927, 1360, 1858, 2390, 2916, 3391, 3768, 4012, 4096};
 
+/**
+ * Heart Rate Monitor
+ */
 HEART_RATE::HEART_RATE()
 {
 	// Constructor
