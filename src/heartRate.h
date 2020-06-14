@@ -64,6 +64,9 @@
 #include "WProgram.h"
 #endif
 
+/**
+ * Heart rate calculation
+ */
 class HEART_RATE
 {
 public:

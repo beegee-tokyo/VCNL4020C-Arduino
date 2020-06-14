@@ -166,6 +166,10 @@ void HEART_RATE::calcHR(void)
 	beatsPerMinute = (60000 / delta);
 }
 
+/** 
+ * @brief Get last calculated heart rate
+ * @return last calculated heart rate
+ */
 int HEART_RATE::getLastHR(void)
 {
 	return beatsPerMinute;

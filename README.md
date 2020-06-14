@@ -1,10 +1,11 @@
-# VNCL4020C-Arduino
+# VCNL4020C-Arduino [![Build Status](https://travis-ci.com/beegee-tokyo/Testing-Yaml.svg?branch=master)](https://travis-ci.com/beegee-tokyo/Testing-Yaml)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://beegee-tokyo.github.io/Testing-Yaml/html/index.html)
+
 ----
-Arduino library for the Vishay VNCL4020C    
+Arduino library for the Vishay VCNL4020C    
 
 ## Content     
 - General info
-- VNCL4020C technical info
+- VCNL4020C technical info
 - API
 
 ## General info
@@ -31,17 +32,17 @@ close-to-human-eye sensitivity
 - 16 bit dynamic range from 0.25 lx to 16 klx
 - 100 Hz and 120 Hz flicker noise rejection
 
-## VNCL4020C technical info    
+## VCNL4020C technical info    
 [Vishay product page](https://www.vishay.com/ppg?84350)    
-[VNCL4020C data sheet](https://www.vishay.com/docs/84350/vcnl4020c.pdf)    
+[VCNL4020C data sheet](https://www.vishay.com/docs/84350/vcnl4020c.pdf)    
 
 ## API    
-The library gives access to all registers of the VNCL4020C. For heart rate calculation the     
+The library gives access to all registers of the VCNL4020C. For heart rate calculation the     
 _**Optical Heart Rate Detection (PBA Algorithm)**_    
 from _**Nathan Seidle (SparkFun Electronics)**_    
 is included. The sources for the heart rate calculation are available on [Github](https://github.com/sparkfun/SparkFun_MAX3010x_Sensor_Library/tree/master/src) and are licensed under MIT.
 
-The library supports the interrupt signal of the VNCL4020C chip. But if the interrupt signal is not connected, the sensor can as well be polled for measurement results    
+The library supports the interrupt signal of the VCNL4020C chip. But if the interrupt signal is not connected, the sensor can as well be polled for measurement results    
 
 Both single measurement and automatic periodic measurements by the sensor are supported.    
 

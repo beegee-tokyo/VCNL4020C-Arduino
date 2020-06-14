@@ -28,6 +28,10 @@ HEART_RATE hr;
 int beatsPerMinute = 0;
 uint16_t bioVal;
 
+#ifndef time_t
+#define time_t uint32_t
+#endif
+
 void setup()
 {
 	Serial.begin(115200);
@@ -54,7 +58,7 @@ void setup()
 	}
 	else
 	{
-		Serial.printf("Got DevID %d, RevID %d\n", regVal1, regVal2);
+		Serial.println("Got DevID " + String(regVal1) + ", RevID " + String(regVal2));
 	}
 
 	// Get current command register settings
@@ -64,11 +68,11 @@ void setup()
 	}
 	else
 	{
-		Serial.printf("Self timed measures %s\n", ((regVal1 & SELF_TIMED_EN) == SELF_TIMED_EN ? "enabled" : "disabled"));
-		Serial.printf("Continuous bio measurement %s\n", ((regVal1 & PER_BIO_MEAS_EN) == PER_BIO_MEAS_EN ? "active" : "inactive"));
-		Serial.printf("Continuous als measurement %s\n", ((regVal1 & PER_ALS_MEAS_EN) == PER_ALS_MEAS_EN ? "active" : "inactive"));
-		Serial.printf("Single bio measurement %s\n", ((regVal1 & START_BIO_MES) == START_BIO_MES ? "active" : "inactive"));
-		Serial.printf("Single als measurement %s\n", ((regVal1 & START_ALS_MES) == START_ALS_MES ? "active" : "inactive"));
+		Serial.println("Self timed measures " + String(((regVal1 & SELF_TIMED_EN) == SELF_TIMED_EN ? "enabled" : "disabled")));
+		Serial.println("Continuous bio measurement " + String(((regVal1 & PER_BIO_MEAS_EN) == PER_BIO_MEAS_EN ? "active" : "inactive")));
+		Serial.println("Continuous als measurement " + String(((regVal1 & PER_ALS_MEAS_EN) == PER_ALS_MEAS_EN ? "active" : "inactive")));
+		Serial.println("Single bio measurement " + String(((regVal1 & START_BIO_MES) == START_BIO_MES ? "active" : "inactive")));
+		Serial.println("Single als measurement " + String(((regVal1 & START_ALS_MES) == START_ALS_MES ? "active" : "inactive")));
 	}
 	// Get current bio sensor data rate
 	if (!ppg1.getBioDataRate(&regVal1))
@@ -84,7 +88,7 @@ void setup()
 		}
 		else
 		{
-			Serial.printf("Bio sensor data rate is %s measures/s\n", sensRates[regVal1].c_str());
+			Serial.println("Bio sensor data rate is " + sensRates[regVal1] + "measures/s");
 		}
 	}
 	// Get LED current setting
@@ -95,7 +99,7 @@ void setup()
 	}
 	else
 	{
-		Serial.printf("LED current is %d mA\n", regVal1 * 10);
+		Serial.println("LED current is " + String(regVal1 * 10) + " mA");
 	}
 
 	// Get ambient light sensor settings
@@ -107,10 +111,10 @@ void setup()
 	{
 		uint8_t alsRates[] = {1, 2, 3, 4, 5, 6, 8, 10};
 		regVal2 = (regVal1 & 0b0111000) >> 4;
-		Serial.printf("ALS data rate %d samples/s\n", alsRates[regVal2]);
-		Serial.printf("Auto offset compensation is %s\n", ((regVal1 & AUTO_COMP_ENA) == AUTO_COMP_ENA ? "enabled" : "disabled"));
+		Serial.println("ALS data rate " + String(alsRates[regVal2]) + " samples/s");
+		Serial.println("Auto offset compensation is " + String(((regVal1 & AUTO_COMP_ENA) == AUTO_COMP_ENA ? "enabled" : "disabled")));
 		regVal2 = regVal1 & 0b00000011;
-		Serial.printf("Averaging count is %d\n", pow(2, regVal2));
+		Serial.println("Averaging count is " + String(pow(2, regVal2)));
 	}
 
 	Serial.println("+++++++++++++++++++++++++++++++++++");
@@ -159,7 +163,7 @@ void setup()
 			}
 			else
 			{
-				Serial.printf("Got Bio value %d\n", regValL1);
+				Serial.println("Got Bio value " + regValL1);
 			}
 			if (regValL2 == 0xFFFF)
 			{
@@ -167,7 +171,7 @@ void setup()
 			}
 			else
 			{
-				Serial.printf("Got ALS value %d\n", regValL2);
+				Serial.println("Got ALS value " + regValL2);
 			}
 		}
 	}
@@ -201,11 +205,11 @@ void loop()
 			{
 				beatsPerMinute = hr.getLastHR();
 			}
-			Serial.printf("Bio value %d Heartrate %d\n", bioVal, beatsPerMinute);
+			Serial.println("Bio value " + String(bioVal) + " Heartrate " + String(beatsPerMinute));
 		}
 		if (ppg1.checkAlsInt())
 		{
-			Serial.printf("ALS value %d\n", ppg1.getAlsValue());
+			Serial.println("ALS value " + String(ppg1.getAlsValue()));
 		}
 
 		// Attempt to auto-adjust LED current

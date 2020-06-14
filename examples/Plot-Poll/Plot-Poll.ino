@@ -52,7 +52,7 @@ void loop()
 	if (ppg1.bioDataReady())
 	{
 		bioVal = ppg1.getBioValue();
-		Serial.printf("%d\n", bioVal);
+		Serial.println(bioVal);
 
 		// Attempt to auto-adjust LED current
 		uint8_t current;

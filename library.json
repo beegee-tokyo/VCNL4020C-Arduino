@@ -1,8 +1,8 @@
 {
-	"name": "VNCL4020C-Arduino",
+	"name": "VCNL4020C-Arduino",
 	"version": "1.0.0",
 	"keywords": "PPG sensor",
-	"description": "Library to use Vishay VNCL4020C PPG sensor",
+	"description": "Library to use Vishay VCNL4020C PPG sensor",
 	"frameworks": "Arduino",
 	"platforms": "*",
 	"examples": "[Ee]xamples/*/*.ino",
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/beegee-tokyo/VNCL4020C-Arduino.git"
+		"url": "https://github.com/beegee-tokyo/VCNL4020C-Arduino.git"
 	},
-	"homepage": "https://github.com/beegee-tokyo/VNCL4020C-Arduino"
+	"homepage": "https://github.com/beegee-tokyo/VCNL4020C-Arduino"
 }

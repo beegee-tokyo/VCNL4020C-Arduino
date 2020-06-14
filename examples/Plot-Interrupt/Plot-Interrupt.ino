@@ -32,7 +32,7 @@ void setup()
 	// Initialize sensor
 	if (!ppg1.initSensorDefault())
 	{
-		Serial.println("Sensor initialization failed!");
+		Serial.println("VCNL4020C initialization failed!");
 	}
 
 	// Set interrupt pin and callback function
@@ -57,7 +57,7 @@ void loop()
 		if (ppg1.checkBioInt())
 		{
 			bioVal = ppg1.getBioValue();
-			Serial.printf("%d\n", bioVal);
+			Serial.println(bioVal);
 		}
 
 		// Attempt to auto-adjust LED current
